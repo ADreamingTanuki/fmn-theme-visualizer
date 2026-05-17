@@ -31,8 +31,8 @@ A standalone Vite + React project (`fmn-theme-visualizer`) for designing and loc
 - [x] `src/sections/Patterns.tsx` — includes "Open Search" and "Open Settings" triggers
 
 **Modal Emulations**
-- [ ] Search / Command Palette modal
-- [ ] Settings modal
+- [x] Search / Command Palette modal
+- [x] Settings modal
 
 **Design Work**
 - [ ] First palette defined and looking right in light mode

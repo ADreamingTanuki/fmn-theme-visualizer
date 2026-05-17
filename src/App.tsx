@@ -8,11 +8,11 @@ import './styles/layout.css'
 import './styles/visualizer.css'
 
 type Theme = 'light' | 'dark'
-type Palette = 'warm' | 'cool'
+type Palette = 'herbalist' | 'forest' | 'dusty-rose' | 'midnight' | 'overcast' | 'candlelit'
 
 function App() {
   const [theme, setTheme] = useState<Theme>('light')
-  const [palette, setPalette] = useState<Palette>('warm')
+  const [palette, setPalette] = useState<Palette>('herbalist')
 
   document.documentElement.setAttribute('data-theme', theme)
   document.documentElement.setAttribute('data-palette', palette)

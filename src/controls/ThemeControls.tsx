@@ -1,5 +1,5 @@
 type Theme = 'light' | 'dark'
-type Palette = 'warm' | 'cool'
+type Palette = 'herbalist' | 'forest' | 'dusty-rose' | 'midnight' | 'overcast' | 'candlelit'
 
 interface Props {
   theme: Theme
@@ -9,7 +9,16 @@ interface Props {
 }
 
 const THEMES: Theme[] = ['light', 'dark']
-const PALETTES: Palette[] = ['warm', 'cool']
+const PALETTES: Palette[] = ['herbalist', 'forest', 'dusty-rose', 'midnight', 'overcast', 'candlelit']
+
+const PALETTE_LABELS: Record<Palette, string> = {
+  'herbalist':  'Herbalist',
+  'forest':     'Forest',
+  'dusty-rose': 'Dusty Rose',
+  'midnight':   'Midnight',
+  'overcast':   'Overcast',
+  'candlelit':  'Candlelit',
+}
 
 export default function ThemeControls({ theme, palette, onThemeChange, onPaletteChange }: Props) {
   return (
@@ -33,7 +42,7 @@ export default function ThemeControls({ theme, palette, onThemeChange, onPalette
             className={`control-btn${palette === p ? ' active' : ''}`}
             onClick={() => onPaletteChange(p)}
           >
-            {p}
+            {PALETTE_LABELS[p]}
           </button>
         ))}
       </div>
