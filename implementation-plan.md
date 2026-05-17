@@ -25,10 +25,10 @@ A standalone Vite + React project (`fmn-theme-visualizer`) for designing and loc
 - [x] `src/controls/ThemeControls.tsx` — light/dark toggle, palette switcher, renders in footer
 
 **Sections**
-- [ ] `src/sections/Typography.tsx`
-- [ ] `src/sections/Colours.tsx`
-- [ ] `src/sections/Panels.tsx`
-- [ ] `src/sections/Patterns.tsx` — includes "Open Search" and "Open Settings" triggers
+- [x] `src/sections/Typography.tsx`
+- [x] `src/sections/Colours.tsx`
+- [x] `src/sections/Panels.tsx`
+- [x] `src/sections/Patterns.tsx` — includes "Open Search" and "Open Settings" triggers
 
 **Modal Emulations**
 - [ ] Search / Command Palette modal

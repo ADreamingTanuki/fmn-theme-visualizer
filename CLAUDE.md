@@ -11,6 +11,10 @@ npm run dev
 # Opens at http://localhost:5173
 ```
 
+## Todo Process
+Use @tmp.todo.md to build todo lists. When you complete instructions from this list, check it off.
+Read @spec.md before generating a todo
+
 ## The One Rule
 
 Every visual value in the sample UI area must trace back to a token in `src/styles/decor.css`. No hardcoded hex values. No hardcoded sizes outside token definitions. If something looks wrong, the fix is always in `decor.css`.
