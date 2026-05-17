@@ -19,13 +19,33 @@ export function Panels() {
         }}
       >
         {panelWidths.map(({ label, width }) => (
-          <div key={label}>
+        // Area around panel (groups text under frame)
+        <div key={label} style={{
+            width: "100%",
+            height: "320px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+        }}>
+          {/* Frame around panel */ }
+          <div key={label} style={{
+            width: "100%",
+            height: "100%",
+            border: "solid 1px var(--color-border)",
+            borderRadius: "10px",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+          }}>
+            {/* The actual panel */}
             <div
               style={{
                 width,
                 backgroundColor: "var(--color-bg-surface)",
                 borderRadius: "var(--panel-radius)",
-                border: "var(--panel-border-width) solid var(--color-border)",
+                border: "1px solid var(--color-border)",
                 boxShadow: "var(--panel-shadow)",
                 padding: "var(--space-6)",
               }}
@@ -53,18 +73,20 @@ export function Panels() {
                 spacing and typography.
               </p>
             </div>
-            <code
-              style={{
-                display: "block",
-                fontSize: "var(--font-size-xs)",
-                color: "var(--color-text-muted)",
-                marginTop: "var(--space-3)",
-                textAlign: "center",
-              }}
-            >
-              {width}
-            </code>
           </div>
+          <code
+            style={{
+              display: "block",
+              width,
+              fontSize: "var(--font-size-xs)",
+              color: "var(--color-text-muted)",
+              marginTop: "var(--space-3)",
+              textAlign: "center",
+            }}
+          >
+            {width}
+          </code>
+        </div>
         ))}
       </div>
     </section>
