@@ -1,0 +1,47 @@
+.visualizer-footer {
+  flex-shrink: 0;
+  border-top: 1px solid #e5e4e7;
+  background: #fafaf9;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-group {
+  display: flex;
+  gap: 4px;
+}
+
+.control-divider {
+  width: 1px;
+  height: 20px;
+  background: #e5e4e7;
+  margin: 0 4px;
+}
+
+.control-btn {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #e5e4e7;
+  background: transparent;
+  color: #9a96a1;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.control-btn:hover {
+  background: #f0eff4;
+  color: #4a4650;
+}
+
+.control-btn.active {
+  background: #4a4650;
+  border-color: #4a4650;
+  color: #fff;
+}

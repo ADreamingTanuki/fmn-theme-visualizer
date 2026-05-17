@@ -1,0 +1,31 @@
+@import './decor.css';
+
+#root {
+  height: 100svh;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+}
+
+.sample-area {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.section {
+  margin: 0;
+}
+
+.section > h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+}

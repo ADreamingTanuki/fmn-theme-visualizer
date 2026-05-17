@@ -1,0 +1,4 @@
+Generate a starting CSS colour palette for a nature-inspired note-taking app with two themes: light and dark. Apply them as CSS custom properties on [data-theme="light"] and [data-theme="dark"] selectors.
+Light theme: Parchment and cream tones for backgrounds, muted ink greens as the primary accent, warm amber and rust as secondary accents. Text should be a deep warm brown, not black.
+Dark theme: Deep near-black with warm undertones (not cool grey), same green/amber/rust accent family as the light theme but adjusted for dark backgrounds. Text should be warm off-white.
+Both themes need variables for: background, surface, border, text (primary/secondary/muted), accent (default/dark/text-on-accent), and a small set of warm secondary colours (amber, rust). No font or layout properties.
