@@ -8,14 +8,17 @@ import './styles/layout.css'
 import './styles/visualizer.css'
 
 type Theme = 'light' | 'dark'
-type Palette = 'herbalist' | 'forest' | 'dusty-rose' | 'midnight' | 'overcast' | 'candlelit'
+type Palette = 'herbalist' | 'dusty-rose'
+type Font = 'classic' | 'romantic' | 'scholarly' | 'gentle-humanist' | 'typewriter'
 
 function App() {
   const [theme, setTheme] = useState<Theme>('light')
   const [palette, setPalette] = useState<Palette>('herbalist')
+  const [font, setFont] = useState<Font>('classic')
 
   document.documentElement.setAttribute('data-theme', theme)
   document.documentElement.setAttribute('data-palette', palette)
+  document.documentElement.setAttribute('data-font', font)
 
   return (
     <div className="app-layout">
@@ -29,8 +32,10 @@ function App() {
         <ThemeControls
           theme={theme}
           palette={palette}
+          font={font}
           onThemeChange={setTheme}
           onPaletteChange={setPalette}
+          onFontChange={setFont}
         />
       </footer>
     </div>

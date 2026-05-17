@@ -35,10 +35,10 @@ A standalone Vite + React project (`fmn-theme-visualizer`) for designing and loc
 - [x] Settings modal
 
 **Design Work**
-- [ ] First palette defined and looking right in light mode
-- [ ] First palette defined and looking right in dark mode
-- [ ] Token values finalised and committed
-- [ ] `decor.css` ready to graduate into the real app
+- [x] First palette defined and looking right in light mode
+- [x] First palette defined and looking right in dark mode
+- [x] Token values finalised and committed
+- [x] `decor.css` ready to graduate into the real app
 
 ---
 
