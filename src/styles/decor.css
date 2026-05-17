@@ -3,6 +3,8 @@
   /* Backgrounds */
   --color-bg:           #f5f0e6;
   --color-bg-surface:   #faf8f2;
+  --color-bg-hover:     #ede7d8;
+  --color-overlay:      rgba(30, 20, 10, 0.45);
 
   /* Borders */
   --color-border:       #ddd4be;
@@ -27,6 +29,8 @@
   /* Backgrounds */
   --color-bg:           #f0f2f5;
   --color-bg-surface:   #f7f9fb;
+  --color-bg-hover:     #e4e9f0;
+  --color-overlay:      rgba(15, 20, 30, 0.45);
 
   /* Borders */
   --color-border:       #d0d8e0;
@@ -51,6 +55,8 @@
   /* Backgrounds */
   --color-bg:           #181410;
   --color-bg-surface:   #221e18;
+  --color-bg-hover:     #2e2920;
+  --color-overlay:      rgba(0, 0, 0, 0.6);
 
   /* Borders */
   --color-border:       #3a3228;
@@ -75,6 +81,8 @@
   /* Backgrounds */
   --color-bg:           #0f1418;
   --color-bg-surface:   #1a1f28;
+  --color-bg-hover:     #252e38;
+  --color-overlay:      rgba(0, 0, 0, 0.65);
 
   /* Borders */
   --color-border:       #2a3340;
@@ -127,4 +135,8 @@
   --panel-radius:       0.5rem;     /* 8px */
   --panel-shadow:       0 2px 8px rgba(0, 0, 0, 0.1);
   --panel-border-width: 1px;
+
+  /* Interaction */
+  --transition-hover:       background-color 0.12s ease;
+  --modal-backdrop-blur:    6px;
 }

@@ -12,8 +12,34 @@ npm run dev
 ```
 
 ## Todo Process
+
 Use @tmp.todo.md to build todo lists. When you complete instructions from this list, check it off.
 Read @spec.md before generating a todo
+
+## Comment Policy
+Comment for human readability. 
+- Don't write long unncessary comments
+- Label non-obvious divs with with a short name descibing what it does. Elaborate with a short description only if needed.
+
+## Extracted Parameters
+Extract parameters from deep code layers when they make sense or when prompted to.
+Use the following pattern for ideas like "panel size"
+```ts
+const MIN_WIDTH = "500px";
+const MAX_WIDTH = "680px";
+const TARGET_WIDTH = "80vw";
+const TARGET_HEIGHT = "80vh";
+
+style={{
+  backgroundColor: "var(--color-bg-surface)",
+  borderRadius: "var(--panel-radius)",
+  boxShadow: "var(--panel-shadow)",
+  border: "var(--panel-border-width) solid var(--color-border)",
+  width:  `clamp(${MIN_WIDTH}, ${TARGET_WIDTH}, ${MAX_WIDTH})`,
+  height: `${TARGET_HEIGHT}`,
+  overflow: "auto",
+}}
+```
 
 ## The One Rule
 

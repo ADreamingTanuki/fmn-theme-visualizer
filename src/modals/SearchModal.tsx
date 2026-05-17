@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -11,7 +13,15 @@ const contentResults = [
 
 const commandResults = ["→ Export entries", "→ Delete entry"];
 
+const MIN_WIDTH = "500px";
+const MAX_WIDTH = "680px";
+const TARGET_WIDTH = "80vw";
+const TARGET_HEIGHT = "80vh";
+
 export function SearchModal({ open, onClose }: Props) {
+  const [hoveredEntry, setHoveredEntry] = useState<string | null>(null);
+  const [hoveredCommand, setHoveredCommand] = useState<string | null>(null);
+
   if (!open) return null;
 
   return (
@@ -20,6 +30,7 @@ export function SearchModal({ open, onClose }: Props) {
         position: "fixed",
         inset: 0,
         backgroundColor: "var(--color-overlay)",
+        backdropFilter: `blur(var(--modal-backdrop-blur))`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -27,19 +38,20 @@ export function SearchModal({ open, onClose }: Props) {
       }}
       onClick={onClose}
     >
+      {/* modal panel */}
       <div
         style={{
           backgroundColor: "var(--color-bg-surface)",
           borderRadius: "var(--panel-radius)",
           boxShadow: "var(--panel-shadow)",
           border: "var(--panel-border-width) solid var(--color-border)",
-          width: "90%",
-          maxWidth: "500px",
-          maxHeight: "80vh",
+          width:  `clamp(${MIN_WIDTH}, ${TARGET_WIDTH}, ${MAX_WIDTH})`,
+          height: `${TARGET_HEIGHT}`,
           overflow: "auto",
         }}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* header */}
         <div
           style={{
             padding: "var(--space-4)",
@@ -54,7 +66,7 @@ export function SearchModal({ open, onClose }: Props) {
               fontFamily: "var(--font-heading)",
               fontSize: "var(--font-size-lg)",
               margin: 0,
-              color: "var(--color-text-primary)",
+              color: "var(--color-text)",
             }}
           >
             Search
@@ -74,6 +86,7 @@ export function SearchModal({ open, onClose }: Props) {
           </button>
         </div>
 
+        {/* body */}
         <div style={{ padding: "var(--space-4)" }}>
           <input
             type="text"
@@ -83,11 +96,11 @@ export function SearchModal({ open, onClose }: Props) {
               width: "100%",
               padding: "var(--space-3)",
               fontFamily: "var(--font-body)",
-              fontSize: "var(--font-size-md)",
-              backgroundColor: "var(--color-bg-primary)",
-              border: "var(--panel-border-width) solid var(--color-border-strong)",
+              fontSize: "var(--font-size-base)",
+              backgroundColor: "var(--color-bg)",
+              border: "var(--panel-border-width) solid var(--color-border)",
               borderRadius: "var(--panel-radius)",
-              color: "var(--color-text-primary)",
+              color: "var(--color-text)",
               marginBottom: "var(--space-4)",
               boxSizing: "border-box",
               outline: "none",
@@ -110,13 +123,16 @@ export function SearchModal({ open, onClose }: Props) {
             {contentResults.map((item) => (
               <div
                 key={item}
+                onMouseEnter={() => setHoveredEntry(item)}
+                onMouseLeave={() => setHoveredEntry(null)}
                 style={{
                   padding: "var(--space-3)",
-                  backgroundColor: "var(--color-bg-primary)",
+                  backgroundColor: hoveredEntry === item ? "var(--color-bg-hover)" : "var(--color-bg)",
+                  transition: "var(--transition-hover)",
                   borderRadius: "var(--panel-radius)",
                   fontFamily: "var(--font-body)",
-                  fontSize: "var(--font-size-md)",
-                  color: "var(--color-text-primary)",
+                  fontSize: "var(--font-size-base)",
+                  color: "var(--color-text)",
                   cursor: "pointer",
                 }}
               >
@@ -141,13 +157,16 @@ export function SearchModal({ open, onClose }: Props) {
             {commandResults.map((item) => (
               <div
                 key={item}
+                onMouseEnter={() => setHoveredCommand(item)}
+                onMouseLeave={() => setHoveredCommand(null)}
                 style={{
                   padding: "var(--space-3)",
-                  backgroundColor: "var(--color-bg-secondary)",
+                  backgroundColor: hoveredCommand === item ? "var(--color-bg-hover)" : "var(--color-bg-surface)",
+                  transition: "var(--transition-hover)",
                   borderRadius: "var(--panel-radius)",
                   fontFamily: "var(--font-mono)",
                   fontSize: "var(--font-size-sm)",
-                  color: "var(--color-accent-primary)",
+                  color: "var(--color-accent)",
                   cursor: "pointer",
                 }}
               >

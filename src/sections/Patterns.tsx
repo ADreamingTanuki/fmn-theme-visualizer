@@ -5,6 +5,9 @@ import { SettingsModal } from "../modals/SettingsModal";
 export function Patterns() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const [primaryHovered, setPrimaryHovered] = useState(false);
+  const [ghostHovered, setGhostHovered] = useState(false);
 
   return (
     <section className="section">
@@ -37,6 +40,8 @@ export function Patterns() {
           {["Reflections", "Gratitude", "Dreams", "Goals"].map((item) => (
             <div
               key={item}
+              onMouseEnter={() => setHoveredCategory(item)}
+              onMouseLeave={() => setHoveredCategory(null)}
               style={{
                 padding: "var(--space-2) var(--space-3)",
                 fontFamily: "var(--font-body)",
@@ -44,6 +49,8 @@ export function Patterns() {
                 color: "var(--color-text)",
                 cursor: "pointer",
                 borderRadius: "var(--panel-radius)",
+                backgroundColor: hoveredCategory === item ? "var(--color-bg-hover)" : "transparent",
+                transition: "var(--transition-hover)",
               }}
             >
               {item}
@@ -131,30 +138,36 @@ export function Patterns() {
           <div style={{ display: "flex", gap: "var(--space-4)" }}>
             <button
               onClick={() => setSearchOpen(true)}
+              onMouseEnter={() => setPrimaryHovered(true)}
+              onMouseLeave={() => setPrimaryHovered(false)}
               style={{
                 padding: "var(--space-3) var(--space-6)",
                 fontFamily: "var(--font-body)",
                 fontSize: "var(--font-size-base)",
-                backgroundColor: "var(--color-accent)",
+                backgroundColor: primaryHovered ? "var(--color-accent-dark)" : "var(--color-accent)",
                 color: "var(--color-accent-text)",
                 border: "none",
                 borderRadius: "var(--panel-radius)",
                 cursor: "pointer",
+                transition: "var(--transition-hover)",
               }}
             >
               Open Search
             </button>
             <button
               onClick={() => setSettingsOpen(true)}
+              onMouseEnter={() => setGhostHovered(true)}
+              onMouseLeave={() => setGhostHovered(false)}
               style={{
                 padding: "var(--space-3) var(--space-6)",
                 fontFamily: "var(--font-body)",
                 fontSize: "var(--font-size-base)",
-                backgroundColor: "transparent",
+                backgroundColor: ghostHovered ? "var(--color-bg-hover)" : "transparent",
                 color: "var(--color-accent)",
                 border: "var(--panel-border-width) solid var(--color-accent)",
                 borderRadius: "var(--panel-radius)",
                 cursor: "pointer",
+                transition: "var(--transition-hover)",
               }}
             >
               Open Settings
